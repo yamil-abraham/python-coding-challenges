@@ -1,0 +1,42 @@
+'''
+
+Given a string s, find the length of the longest substring without repeating characters.
+
+Input Format
+
+Input: s = "abcabcbb"
+
+Constraints
+
+s consists of lowercase English letters
+
+Output Format
+
+Output: 3 Explanation: The longest substring without repeating characters is "abc", which has a length of 3.
+
+'''
+
+def lengthOfLongestSubstring(s):
+    # Initialize a dictionary to store characters and their indices
+    char_index = {}
+    max_length = 0
+    start = 0
+
+    # Iterate through the string
+    for i, char in enumerate(s):
+        # If the character is already in the dictionary and its index is within the current range
+        if char in char_index and char_index[char] >= start:
+            # Update the start index
+            start = char_index[char] + 1
+
+        # Update the character's index in the dictionary
+        char_index[char] = i
+
+        # Calculate the maximum length of the substring without repetitions
+        max_length = max(max_length, i - start + 1)
+
+    return max_length
+
+# Example usage
+s = "abcabcbb"
+print(lengthOfLongestSubstring(s))  # Output: 3
