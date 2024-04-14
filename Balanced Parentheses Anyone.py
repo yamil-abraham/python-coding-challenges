@@ -1,9 +1,6 @@
-s = "({}[])"
-
 def balanced(s):
     stack = []
     mapping = {')': '(', '}': '{', ']': '['}
-    
     for char in s:
         if char in mapping.values():
             stack.append(char)
@@ -11,13 +8,8 @@ def balanced(s):
             if stack and stack[-1] == mapping[char]:
                 stack.pop()
             else:
-                return
-        else:
-            return
-            
-    if not stack:
-        print("True")
-    else:
-        return
+                return False
+    return not stack
 
-balanced(s)
+input_str = input()
+print(balanced(input_str.split('"')[1]))
