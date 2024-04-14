@@ -1,3 +1,18 @@
+'''
+Given a string s containing parentheses (), {}, and [], determine if the parentheses are balanced.
+
+Input Format
+
+Input: s = "((())())"
+
+Constraints
+
+s only contains parentheses characters: (), {}, and [].
+
+Output Format
+
+Output: True
+'''
 def balanced(s):
     stack = []
     mapping = {')': '(', '}': '{', ']': '['}
