@@ -31,7 +31,3 @@ def lengthOfLongestSubstring(s):
 
 input_str = input()
 print(lengthOfLongestSubstring(input_str.split('"')[1]))
-
-# Example usage
-s = "abcabcbb"
-print(lengthOfLongestSubstring(s))  # Output: 3
